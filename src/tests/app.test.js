@@ -6,13 +6,7 @@ const usuario = {
   apelido: "Joãozinho",
   email: "teste@jest.com",
   senha: "Reccahj@",
-  cpf: "750.156.770-06",
-  telefone: 23145697877,
-  cep: 12145887,
-  endereco: "Rua do Brilho Eterno",
-  cidade: "Vale das Yags",
-  uf: "RB",
-  complemento: '',
+
 }
 
 describe("Testagem de rota POST", () => {
@@ -24,24 +18,6 @@ describe("Testagem de rota POST", () => {
       console.log(erro);
     }
 
-  })
-  test("deveria retornar Status 400", async () => {
-    try {
-      const usuarioErradoTeste = {
-        nome: "Joao Jest",
-        telefone: 23145697877,
-        cep: 12145887,
-        endereco: "Rua do Brilho Eterno",
-        cidade: "Vale das Yags",
-        uf: "RB",
-        email: "teste@jest.com",
-        senha: "Reccahj@",
-      }
-      const resposta = await request(app).post("/usuario").send(usuarioErradoTeste)
-      expect(resposta.statusCode).toBe(400)
-    } catch (erro) {
-      return erro;
-    }
   })
 })
 describe("Testagem de rota GET ", () => {
