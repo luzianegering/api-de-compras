@@ -12,13 +12,6 @@ CREATE TABLE IF NOT EXISTS "Usuarios"(
     "apelido" varchar(64),
     "email" varchar(64),
     "senha" varchar(64),
-    "cpf" varchar(11),
-    "telefone" INTEGER,
-    "endereco" varchar(64),
-    "cep" INTEGER,
-    "cidade" varchar(64),
-    "uf" varchaar(4),
-    "complemento" varchar(64)
     
 )`;
 function criaTabelaDeUsuarios() {
