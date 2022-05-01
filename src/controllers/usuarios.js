@@ -4,9 +4,9 @@ const bcrypt = require("bcrypt");
 class UsuariosControllers {
     static async cadastrarUsuario(req, res) {
         try {
-            const { nome, apelido, email, senha, cpf, telefone, endereco, cep, cidade, uf, complemento } = req.body;
+            const { nome, apelido, email, senha } = req.body;
             const senhaHash = await bcrypt.hash(senha, 12);
-            const novoUsuario = new Usuario({ nome, apelido, email, senha: senhaHash, cpf, telefone, endereco, cep, cidade, uf, complemento });
+            const novoUsuario = new Usuario({ nome, apelido, email, senha: senhaHash });
             await novoUsuario.cadastrarUsuario();
             return res.status(200).json(novoUsuario)
         } catch (error) {
